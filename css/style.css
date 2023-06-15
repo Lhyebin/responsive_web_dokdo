@@ -4,12 +4,99 @@
     --lc: #dddddd;
     --wc: #ffffff;
     --dc: #444444;
+    --gc: #f9f9f9;
 }
 
 .inner {
     max-width: 1440rem;
     margin: 0 auto;
     padding: 0 15rem;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 20rem;
+    padding: 20rem 30rem;
+    border-radius: 30rem;
+    overflow: hidden;
+}
+
+.btn2 {
+    display: inline-block;
+    font-size: 18rem;
+    padding: 10rem 20rem;
+    border-radius: 16rem;
+    overflow: hidden;
+    background: var(--dc);
+    color: var(--wc);
+}
+
+.btn3 {
+    display: inline-block;
+    font-size: 14rem;
+    padding: 5rem 10rem 4rem 10rem;
+    border-radius: 10rem;
+    overflow: hidden;
+    color: var(--mc);
+    border: 2px solid var(--mc);
+}
+
+.btn::after {
+    content: "\f1c3";
+    font-family: bootstrap-icons;
+    vertical-align: middle;
+    margin: 0 0 0 15rem;
+}
+
+.btn.wc {
+    color: var(--wc);
+    border: 2px solid var(--wc);
+}
+
+.btn.wc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: -1;
+    background: var(--mc);
+    transition: .5s;
+}
+
+.btn.wc:hover::before {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+}
+
+.btn.mc {
+    color: var(--mc);
+    border: 2px solid var(--mc);
+}
+
+.list_dots>* {
+    position: relative;
+    padding: 0 0 0 15rem;
+}
+
+.list_dots>*::before {
+    content: "";
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--mc);
+}
+
+.section {
+    padding: 100rem 0;
+}
+
+.section .gc {
+    background: var(--gc);
 }
 
 .wrap {}
@@ -169,6 +256,11 @@
     height: 100vh;
 }
 
+.main_slide {
+    border-radius: 0 0 180rem 0;
+    overflow: hidden;
+}
+
 .main_slide .itm {
     position: relative;
     overflow: hidden;
@@ -212,13 +304,6 @@
 }
 
 .main_slide .itm .btn {
-    display: inline-block;
-    color: var(--wc);
-    font-size: 20rem;
-    padding: 20rem 30rem;
-    border: 2px solid var(--wc);
-    border-radius: 30rem;
-
     transform: translate(100rem, 0);
     opacity: 0;
     transition: .5s 1.5s;
@@ -274,6 +359,279 @@
     padding: 30rem;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+}
+
+.main_visual .btn_cicle {
+    position: absolute;
+    bottom: -100rem;
+    right: 300rem;
+    z-index: 999;
+
+    width: 200rem;
+    height: 200rem;
+}
+
+.main_visual .btn_cicle .case {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200rem;
+    height: 200rem;
+    background: var(--mc);
+    color: var(--wc);
+    font-size: 20rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26rem;
+}
+
+.main_visual .btn_cicle:hover .case {
+    animation: flipInY 1s infinite;
+}
+
+.main_visual .btn_cicle .case::before {
+    content: "";
+    display: block;
+    width: 26rem;
+    height: 30rem;
+    background: url(../images/icon_apply.svg) no-repeat center center/cover;
+    margin: 0 0 20rem 0;
+}
+
+
+
+
+/* <👿😈스크롤 실습 효과 넣어보기 TEST>
+.sec {
+    position: relative;
+    padding: 100px 0;
+    height: 60vh;
+}
+
+.sec::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: 200px;
+    background: aquamarine;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 999;
+
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.sec.on::before {
+    opacity: 0;
+    transform: scale(1);
+}
+
+.sec .inner {
+    display: flex;
+    gap: 60px;
+}
+
+.sec .inner .itm {
+    flex: 1;
+    height: 500px;
+    background: tomato;
+
+    opacity: 0;
+    transform: translate(0, 300px);
+    transition: 0.5s;
+}
+
+.sec.on .inner .itm {
+    opacity: 1;
+    transform: translate(0, 0);
+} */
+
+
+
+
+
+
+.main_content {}
+
+.main_content .contnet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30rem;
+}
+
+.main_content .contnet>* {
+    padding: 80rem 60rem;
+}
+
+.main_content .contnet .left {
+    position: relative;
+    border-radius: 50rem;
+    background: var(--gc);
+}
+
+.main_content .contnet .left::after {
+    content: "";
+    position: absolute;
+    bottom: -20rem;
+    right: 0;
+    width: 400rem;
+    height: 150rem;
+    background: url(../images/img_logo2.svg) no-repeat right bottom;
+    filter: invert();
+}
+
+.main_content .contnet h3 {
+    font-size: 24rem;
+    font-weight: 700;
+    margin: 0 0 17rem 0;
+}
+
+.main_content .contnet .left {
+    opacity: 0;
+    transform: translate(0, 100rem);
+    transition: .8s;
+}
+
+.main_content.on .contnet .left {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.main_content .contnet .right {
+    opacity: 0;
+    transform: translate(0, 100rem);
+    transition: .8s .5s;
+}
+
+.main_content.on .contnet .right {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.main_content .contnet .left p {
+    font-size: 15rem;
+    font-weight: 300;
+    line-height: 20rem;
+    margin: 0 0 37rem 0;
+}
+
+.main_content .contnet .right .desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 30rem 0;
+    padding: 0 0 15rem 0;
+    border-bottom: 1px dotted var(--lc);
+    /* -> 점선 긋기 : dotted or dashed */
+}
+
+.main_content .contnet .right .desc i {
+    background: var(--gc);
+    padding: 15rem 16rem;
+    border-radius: 50%;
+    font-size: 30rem;
+}
+
+.main_content .contnet .right .desc .tel {
+    font-size: 40rem;
+    font-weight: 700;
+}
+
+.main_content .contnet .list>* {
+    display: grid;
+    grid-template-columns: 100rem 1fr;
+    margin: 0 0 20rem 0;
+    line-height: 1.6;
+}
+
+.main_content .contnet .list .ls2 {
+    letter-spacing: 30rem;
+    /* -> 자간 조절 */
+}
+
+.main_content .contnet .list::before {
+    top: 10rem;
+}
+
+
+
+
+
+
+
+.main_notice {
+    padding: 0 0 100rem 0;
+}
+
+.main_notice h2 {
+    font-size: 50rem;
+    font-weight: 700;
+    margin: 0 0 27rem 0;
+}
+
+.main_notice .arrows i {
+    padding: 14rem 16rem;
+    font-size: 25rem;
+    background: var(--dc);
+    color: var(--wc);
+    border-radius: 50%;
+    margin: 0 10rem 0 0;
+    cursor: pointer;
+}
+
+.main_notice p {
+    font-size: 15rem;
+    font-weight: 300;
+    line-height: 20rem;
+    margin: 0 0 57rem 0;
+}
+
+.main_notice .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.main_notice .content {
+    opacity: 0;
+    transform: translate(0, 100rem);
+    transition: .8s;
+}
+
+.main_notice.on .content {
+    opacity: 1;
+    transform: translate(0, 100rem);
+}
+
+.main_notice .right {
+    overflow: hidden;
+}
+
+.main_notice img {
+    width: 100%;
+    height: 300rem;
+    object-fit: cover;
+    /* -> 이미지 스케일 유지하면서 박스안에 들어감*/
+}
+
+.main_notice .card {
+    padding: 15rem;
+    background: var(--gc);
+    border-radius: 10rem;
+}
+
+.main_notice .card .img_box {
+    border-radius: 5rem;
+    overflow: hidden;
+    margin: 0 0 15rem 0;
+}
+
+.main_notice .card strong {
+    display: block;
+    margin: 10rem 0;
 }
 
 
