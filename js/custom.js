@@ -11,24 +11,17 @@ $(function () {
 
 
 
-    let snum = 1;
+
+    // <메인배너 : 화면 슬라이드>
     const mainSlide = new Swiper('.main_slide', {
         loop: true,
+        parallax: true,
+        speed: 1000,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         slideActiveClass: 'on',
-        on: {
-            init: function () {
-                // console.log('오잉???', this.realIndex, this.slides.length, this)
-                $('.num span').text(this.realIndex + 1);
-                $('.num strong').text(this.slides.length);
-            },
-            slideChangeTransitionEnd: function () {
-                $('.num span').text(this.realIndex + 1);
-                $('.cicle span:nth-child(1)').css({
-                    transform: 'translate(-50%, 0) rotate(' + sum * 45 + 'deg)'
-
-                })
-            }
-        }
     });
 
 
@@ -41,11 +34,6 @@ $(function () {
         mainSlide.slideNext();
     });
 
-    // <메인배너 : 페이지별 도트 만들기>
-    $('.main_visual .slide_dots li').on('click', function () {
-        let idx = $(this).index();
-        mainSlide.slideTo(idx);
-        $(this).addClass('on').siblings().removeClass('on');
-    });
+
 
 });
